@@ -1,0 +1,38 @@
+.parent {
+    contain: layout inline-size style;
+    --css-contain: layout inline-size style;
+    
+}
+
+.parent2 {
+    contain: layout inline-size style;
+    --css-contain: layout inline-size style;
+    width: 500px;
+    overflow: auto;
+    resize: horizontal;
+}
+
+.card--header {
+    flex: 1
+}
+
+.card--body {
+    flex: 3
+}
+
+
+@container(max-width: 500px) {
+    .card {
+        flex-direction: column !important;
+        background-color: pink !important;
+
+    }
+}
+
+@media --css-container and (max-width: 500px) {
+    .card {
+        flex-direction: column !important;
+        background-color: pink !important;
+
+    }
+}
