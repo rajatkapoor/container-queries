@@ -1,38 +1,72 @@
-.parent {
-    contain: layout inline-size style;
-    --css-contain: layout inline-size style;
-    
+/* styles.css */
+body {
+    background-color: lightblue;
 }
 
-.parent2 {
-    contain: layout inline-size style;
-    --css-contain: layout inline-size style;
-    width: 500px;
-    overflow: auto;
-    resize: horizontal;
+.container {
+    display: grid;
+    place-items: center;
+    grid-gap: 1em;
+}
+
+.card {
+    background: white;
+    border-radius: 2em;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    padding: 2em;
 }
 
 .card--header {
-    flex: 1
+    width: 100%;
+}
+
+.card--image {
+    border-radius: 1em;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
 }
 
 .card--body {
+    padding: 2em;
     flex: 3
+}
+
+.card--header {
+    flex: 2
+}
+
+
+.parent {
+    contain: layout inline-size style;
+    --css-contain: layout inline-size style;
+    resize: horizontal;
+    overflow: auto;
+}
+
+.large {
+    width: 100%;
+}
+
+.small {
+    width: 500px;
 }
 
 
 @container(max-width: 500px) {
     .card {
-        flex-direction: column !important;
-        background-color: pink !important;
-
+        flex-direction: column;
+        background-color: hotpink;
+        color: white;
     }
 }
 
 @media --css-container and (max-width: 500px) {
     .card {
-        flex-direction: column !important;
-        background-color: pink !important;
-
+        flex-direction: column;
+        background-color: hotpink;
+        color: white;
     }
 }
